@@ -7,9 +7,13 @@ using Microsoft.AspNetCore.Mvc.RazorPages;
 using Microsoft.EntityFrameworkCore;
 using Bianca_Teodora_Lab2.Data;
 using Bianca_Teodora_Lab2.Models;
+using Microsoft.AspNetCore.Authorization;
+using System.Data;
 
 namespace Bianca_Teodora_Lab2.Pages.Books
 {
+    [Authorize(Roles = "Admin")]
+
     public class DeleteModel : PageModel
     {
         private readonly Bianca_Teodora_Lab2.Data.Bianca_Teodora_Lab2Context _context;
